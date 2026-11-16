@@ -1,0 +1,26 @@
+{
+  "server": {
+    "https": false,
+    "port": 3000,
+    "allowedOrigins": [
+      "http://localhost:8080",
+      "http://127.0.0.1:8080"
+    ]
+  },
+  "jwt": {
+    "expiresIn": "2h"
+  },
+  "db": {
+    "use": "in-memory-db",
+    "connect": {
+      "user": "myapp",
+      "host": "postgres",
+      "database": "myapp",
+      "password": "wifhm",
+      "port": {
+        "mongodb": 27017,
+        "psql": 5432
+      }
+    }
+  }
+}

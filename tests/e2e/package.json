@@ -1,0 +1,23 @@
+{
+  "name": "e2e-tests",
+  "version": "1.0.0",
+  "description": "End-to-end tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "mocha",
+    "test:e2e": "mocha --no-config --require src/Common/browser.ts --node-option import=tsx --no-warnings --timeout 30000 --ui bdd --color --retries 3 \"src/tests/**/*.e2e-spec.ts\"",
+    "test:ai": "mocha --no-config --require src/Common/browser.ts --node-option import=tsx --no-warnings --timeout 30000 --ui bdd --color --retries 3 \"src/AI-Tests/**/*.e2e-spec.ts\""
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/mocha": "^10.0.10",
+    "c8": "^10.0.0",
+    "chai": "^5.2.0",
+    "@types/chai": "^5.2.2",
+    "mocha": "^12.0.0-beta-10",
+    "@playwright/test": "^1.58.2",
+    "playwright": "^1.58.2",
+    "tsx": "^4.21.0"
+  }
+}

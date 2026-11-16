@@ -1,0 +1,11 @@
+# Autor: Luca Lammers
+
+
+node_modules
+dist
+.git
+
+.env
+node_modules
+.git
+coverage

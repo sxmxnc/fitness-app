@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "start": "docker compose up --build -d",
+    "stop": "docker compose down",
+    "e2e": "npm test --prefix tests/e2e",
+    "cpd": "jscpd",
+    "knip": "knip"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^10.4.0",
+    "globals": "^17.6.0",
+    "jscpd": "^5.0.9",
+    "knip": "^6.16.1",
+    "typescript-eslint": "^8.60.0"
+  }
+}

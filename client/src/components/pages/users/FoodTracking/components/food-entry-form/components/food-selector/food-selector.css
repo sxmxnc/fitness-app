@@ -1,0 +1,135 @@
+/**
+ * Autor: Simon Josef Cebula
+
+ */
+:host {
+  display: block;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.form-input {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  color: #111827;
+  background: #fff;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Space Grotesk', 'Sora', sans-serif;
+}
+
+.form-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 0.15);
+}
+
+/* Food combobox */
+.food-input-wrap {
+  position: relative;
+}
+
+.food-search-input {
+  padding-right: 32px;
+}
+
+.food-clear-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.food-clear-btn:hover {
+  color: #374151;
+  background: #f3f4f6;
+}
+
+.food-dropdown {
+  position: fixed;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.12);
+  overflow-y: auto;
+  z-index: 250;
+}
+
+.food-dropdown-section {
+  padding: 8px 12px 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.food-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 9px 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Space Grotesk', 'Sora', sans-serif;
+  gap: 8px;
+  transition: background 0.1s;
+}
+
+.food-option:hover,
+.food-option.selected {
+  background: #eff6ff;
+}
+
+.food-option.selected .food-option-name {
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.food-option-name {
+  font-size: 0.875rem;
+  color: #111827;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.food-option-kcal {
+  font-size: 0.78rem;
+  color: #6b7280;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.food-dropdown-empty {
+  padding: 16px 12px;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  text-align: center;
+}

@@ -1,0 +1,60 @@
+/*
+   Autor: Luca Lammers
+
+   Autor: Simon Josef Cebula
+
+*/
+.bottom-nav {
+  font-family: 'Space Grotesk', 'Sora', system-ui, sans-serif;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  z-index: 100;
+  padding: 6px 4% 0 4%;
+  height: 56px;
+  box-sizing: border-box;
+}
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  color: #9ca3af;
+  cursor: pointer;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 4px 0;
+  transition: color 0.15s;
+}
+.nav-item:not(.active):hover {
+  color: #6b7280;
+}
+.nav-item:not(.active):hover i {
+  transform: scale(1.15);
+}
+.nav-item i {
+  font-size: 22px;
+  line-height: 1;
+  transition: transform 0.15s;
+}
+.nav-item span {
+  font-size: 0.7rem;
+  line-height: 1;
+}
+.nav-item.active {
+  color: #3b82f6;
+}
+
+@media (min-width: 640px) {
+  .bottom-nav {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}

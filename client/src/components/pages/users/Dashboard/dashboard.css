@@ -1,0 +1,19 @@
+/**
+ * Autor: Luca Lammers
+
+ * Autor: Simon Josef Cebula
+
+ * Autor: Justus Heinz
+
+ */
+:host {
+  display: block;
+}
+
+.page-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 80px;
+}

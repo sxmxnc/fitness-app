@@ -1,0 +1,142 @@
+/**
+ * Autor: Simon Josef Cebula
+
+ */
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  background: #f3f4f6;
+  font-family: 'Space Grotesk', 'Sora', sans-serif;
+}
+
+.page-content {
+  flex: 1;
+  overflow-y: auto;
+  background: #f3f4f6;
+  padding: 16px 16px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.page-content.modal-open {
+  overflow-y: hidden;
+}
+
+/* Loading / Error */
+.loading-state {
+  text-align: center;
+  padding: 48px 16px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.error-state {
+  background: #fef2f2;
+  color: #b91c1c;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.85rem;
+}
+
+/* FAB */
+.fab {
+  position: fixed;
+  bottom: 80px;
+  right: 16px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 22px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgb(0 0 0 / 0.08), 0 10px 20px rgb(0 0 0 / 0.1);
+  z-index: 100;
+  font-family: 'Space Grotesk', 'Sora', sans-serif;
+}
+
+.fab:hover {
+  background: #2563eb;
+}
+
+/* Confirm dialog */
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+}
+
+.confirm-dialog {
+  background: #fff;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 320px;
+  padding: 24px 20px;
+  box-shadow: 0 10px 40px rgb(0 0 0 / 0.2);
+}
+
+.confirm-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px;
+}
+
+.confirm-message {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0 0 20px;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.confirm-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-family: 'Space Grotesk', 'Sora', sans-serif;
+}
+
+.confirm-btn--cancel {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.confirm-btn--cancel:hover {
+  background: #e5e7eb;
+}
+
+.confirm-btn--delete {
+  background: #dc2626;
+  color: #fff;
+}
+
+.confirm-btn--delete:hover {
+  background: #b91c1c;
+}
+
+@media (min-width: 640px) {
+  .page-content {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .fab {
+    right: 24px;
+  }
+}

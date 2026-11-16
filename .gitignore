@@ -1,0 +1,7 @@
+.claude/
+.DS_Store
+tests/WORKOUT_TESTS.md
+node_modules/
+LocalTestFailures.md
+PiplineTestFailures.md
+test-results

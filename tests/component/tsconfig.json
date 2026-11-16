@@ -1,0 +1,18 @@
+{
+  "extends": "../../client/tsconfig.json",
+  "compilerOptions": {
+    "typeRoots": ["./node_modules/@types", "../../client/node_modules/@types", "../../node_modules/@types"],
+    "types": ["chai", "sinon", "mocha"],
+    "paths": {
+      "@open-wc/testing-helpers": ["./node_modules/@open-wc/testing-helpers", "../../client/node_modules/@open-wc/testing-helpers"],
+      "@open-wc/testing-helpers/*": ["./node_modules/@open-wc/testing-helpers/*", "../../client/node_modules/@open-wc/testing-helpers/*"],
+      "chai": ["./node_modules/@types/chai", "../../client/node_modules/@types/chai"],
+      "sinon": ["./node_modules/@types/sinon", "../../client/node_modules/@types/sinon"],
+      "sinon/*": ["./node_modules/@types/sinon/*", "../../client/node_modules/@types/sinon/*"]
+    }
+  },
+  "include": [
+    "./**/*.ts",
+    "../../client/src/**/*.ts"
+  ]
+}

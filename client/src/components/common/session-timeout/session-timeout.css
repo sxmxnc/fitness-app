@@ -1,0 +1,75 @@
+/**
+ * Autor: Luca Lammers
+
+ */
+
+:host {
+	display: contents;
+}
+
+.overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.55);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.dialog {
+	background: #fff;
+	border-radius: 12px;
+	padding: 2rem 2.5rem;
+	max-width: 400px;
+	width: 90%;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	animation: slide-in 0.2s ease;
+}
+
+@keyframes slide-in {
+	from {
+		opacity: 0;
+		transform: translateY(-16px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.dialog h2 {
+	margin: 0 0 0.75rem;
+	font-size: 1.25rem;
+	color: #1a1a2e;
+}
+
+.dialog p {
+	margin: 0 0 1.5rem;
+	color: #444;
+	font-size: 0.95rem;
+	line-height: 1.5;
+}
+
+.countdown {
+	display: inline-block;
+	font-size: 2rem;
+	font-weight: 700;
+	color: #e74c3c;
+	margin-bottom: 1.25rem;
+}
+
+.btn-stay {
+	background: #4a90d9;
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	padding: 0.65rem 1.75rem;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+.btn-stay:hover {
+	background: #357abd;
+}

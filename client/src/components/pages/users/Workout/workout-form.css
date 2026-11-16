@@ -1,0 +1,156 @@
+/*
+  Autor: Justus Heinz
+
+*/
+
+/* FORM FIELDS */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.form-group input {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.87rem;
+  color: #111827;
+  outline: none;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus { border-color: #93c5fd; box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
+.form-group.has-error input { border-color: #f87171; }
+.form-group.flex-1 { flex: 1; min-width: 0; }
+
+.field-error {
+  font-size: 0.72rem;
+  color: #ef4444;
+}
+
+/* EXERCISES IN MODAL */
+
+.exercises-section { margin-top: 4px; }
+
+.exercises-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.btn-add-exercise {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #3b82f6;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.btn-add-exercise:hover { background: #dbeafe; }
+
+.exercise-block {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.exercise-name-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.btn-remove-exercise {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fee2e2;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #ef4444;
+}
+
+.btn-remove-exercise svg { width: 13px; height: 13px; }
+.btn-remove-exercise:hover { background: #fecaca; }
+
+.exercise-fields {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.exercise-fields .form-group.small {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.exercise-fields .form-group.small input { padding: 8px 10px; }
+
+/* EXERCISE AUTOCOMPLETE */
+
+.exercise-autocomplete { display: flex; flex-direction: column; }
+
+.exercise-dropdown {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 4px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-height: 300px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.exercise-dropdown li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.exercise-dropdown li:hover { background: #eff6ff; }
+
+.exercise-dropdown-name {
+  font-size: 0.87rem;
+  color: #111827;
+  font-weight: 500;
+}
+
+.exercise-dropdown-meta {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  white-space: nowrap;
+}

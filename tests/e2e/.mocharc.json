@@ -1,0 +1,10 @@
+{
+  "spec": ["src/**/*.e2e-spec.ts"],
+  "require": ["src/Common/browser.ts"],
+  "node-option": ["import=tsx"],
+  "no-warnings": true,
+  "timeout": "30000",
+  "ui": "bdd",
+  "color": true,
+  "retries": 3
+}

@@ -1,0 +1,152 @@
+/**
+ * Autor: Luca Lammers
+
+ */
+
+:host {
+  --accent: #140095;
+  --accent-light: #e8eaf6;
+  --text: #1a1a2e;
+  --text-light: #555577;
+  --white: #ffffff;
+  --shadow: 0 2px 16px rgba(0, 20, 160, 0.08);
+  --lightgrey-border: #e8eaf6;
+  font-family: 'Space Grotesk', 'Sora', system-ui, sans-serif;
+  color: var(--text);
+  box-sizing: border-box;
+  display: block;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+p {
+  margin: 0;
+  line-height: 1.65;
+  color: var(--text-light);
+}
+
+.hero {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+  padding: 100px 24px 80px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-text {
+  width: 100%;
+  text-align: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    opacity 0.15s,
+    box-shadow 0.15s;
+  border: 2px solid transparent;
+}
+
+.btn:hover {
+  opacity: 0.88;
+  box-shadow: var(--shadow);
+}
+
+.btn-login {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.btn-explore {
+  background: var(--white);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.hero-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btns a {
+  display: contents;
+}
+
+.hero-btns .btn {
+  min-width: 180px;
+  height: 42px;
+  justify-content: center;
+}
+
+.btn-explore img {
+  height: 50px;
+  width: auto;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 80px 24px 56px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-btns .btn {
+    min-width: unset;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 80px 16px 48px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-btns {
+    gap: 10px;
+  }
+}

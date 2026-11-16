@@ -1,0 +1,16 @@
+# Autor: Prof. Dr. Norman Lahme-Hütig (FH Münster) 
+
+# Packages
+node_modules/
+
+# Generierte Dateien
+coverage/
+dist/
+
+# Mac only
+.DS_Store
+
+# Environment variables
+.env
+
+

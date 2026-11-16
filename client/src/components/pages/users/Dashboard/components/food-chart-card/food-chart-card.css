@@ -1,0 +1,143 @@
+/**
+ * Autor: Simon Josef Cebula
+
+ */
+
+:host {
+	display: block;
+}
+
+.chart-card {
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 1px 3px rgb(0 0 0 / 0.16), 0 3px 6px rgb(0 0 0 / 0.1);
+	padding: 20px;
+	margin: 0;
+}
+
+.card-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.card-title {
+	font-size: 1rem;
+	font-weight: 700;
+	color: #111827;
+	margin: 0;
+}
+
+/* Period tabs */
+.period-tabs {
+	display: flex;
+	background: #f3f4f6;
+	border-radius: 8px;
+	padding: 3px;
+}
+
+.period-tab {
+	flex: 1;
+	padding: 5px 14px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	border: none;
+	border-radius: 6px;
+	background: transparent;
+	color: #6b7280;
+	cursor: pointer;
+	font-family: 'Space Grotesk', 'Sora', sans-serif;
+	transition: background 0.15s, color 0.15s;
+}
+
+.period-tab.active {
+	background: #fff;
+	color: #111827;
+	box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+}
+
+.period-tab:hover:not(.active) {
+	color: #111827;
+}
+
+/* Two-column chart layout */
+.chart-section {
+	display: flex;
+	gap: 16px;
+}
+
+.chart-block {
+	flex: 1;
+	min-width: 0;
+}
+
+.chart-divider {
+	width: 1px;
+	background: #e5e7eb;
+	flex-shrink: 0;
+}
+
+.chart-block-title {
+	font-size: 0.75rem;
+	font-weight: 600;
+	color: #6b7280;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-bottom: 10px;
+}
+
+.chart-canvas-wrapper {
+	position: relative;
+	height: 160px;
+}
+
+/* Stat chips */
+.stat-chips {
+	display: flex;
+	gap: 6px;
+	flex-wrap: wrap;
+	margin-top: 12px;
+}
+
+.stat-chip {
+	font-size: 0.72rem;
+	font-weight: 600;
+	color: #374151;
+	background: #f3f4f6;
+	border-radius: 99px;
+	padding: 3px 10px;
+	white-space: nowrap;
+}
+
+.stat-chip.chip-goal {
+	background: #dcfce7;
+	color: #15803d;
+}
+
+/* Loading / empty */
+.loading-state {
+	text-align: center;
+	padding: 32px;
+	color: #6b7280;
+	font-size: 0.875rem;
+}
+
+@media (max-width: 600px) {
+	.chart-section {
+		flex-direction: column;
+	}
+
+	.chart-divider {
+		width: auto;
+		height: 1px;
+	}
+}
+
+@media (min-width: 640px) {
+	.chart-card {
+		padding: 24px;
+	}
+}

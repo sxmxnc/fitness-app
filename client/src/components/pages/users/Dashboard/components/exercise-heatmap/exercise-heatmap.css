@@ -1,0 +1,149 @@
+/**
+ * Autor: Justus Heinz
+
+ */
+:host {
+  display: block;
+}
+
+.dashboard-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+}
+
+.card-header {
+  margin-bottom: 20px;
+}
+
+.card-header h2 {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.card-subtitle {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.heatmap-wrapper {
+  overflow-x: auto;
+}
+
+.heatmap-body {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  min-width: max-content;
+}
+
+.day-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 20px;
+  width: 28px;
+  flex-shrink: 0;
+}
+
+.day-labels span {
+  height: 12px;
+  font-size: 0.6rem;
+  color: #888;
+  line-height: 12px;
+  text-align: right;
+  padding-right: 4px;
+}
+
+.heatmap-cols {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.month-labels {
+  display: grid;
+  height: 18px;
+  margin-bottom: 2px;
+}
+
+.month-label {
+  font-size: 0.65rem;
+  color: #888;
+  white-space: nowrap;
+}
+
+.heatmap-grid {
+  display: grid;
+  gap: 2px;
+}
+
+.week-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.day-cell {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  cursor: default;
+}
+
+.day-cell.ex-level-0 { background: #e0e0e0; }
+.day-cell.ex-level-1 { background: #bfdbfe; }
+.day-cell.ex-level-2 { background: #93c5fd; }
+.day-cell.ex-level-3 { background: #3b82f6; }
+.day-cell.ex-level-4 { background: #1d4ed8; }
+.day-cell.future     { background: transparent; cursor: default; }
+
+.day-cell:not(.ex-level-0):not(.future) {
+  cursor: pointer;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  justify-content: flex-end;
+}
+
+.legend span {
+  font-size: 0.65rem;
+  color: #888;
+}
+
+.tooltip {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  background: #1a1a2e;
+  color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.7rem;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.tooltip-multiline {
+  position: fixed;
+  white-space: pre;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.loading-state {
+  font-size: 0.85rem;
+  color: #888;
+  padding: 16px 0;
+  text-align: center;
+}

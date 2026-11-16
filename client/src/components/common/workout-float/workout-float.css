@@ -1,0 +1,81 @@
+/*
+  Autor: Justus Heinz
+
+*/
+
+:host {
+  display: block;
+  position: fixed;
+  bottom: 72px;
+  left: 0;
+  right: 0;
+  z-index: 150;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.float-bar {
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #111827;
+  color: #fff;
+  border-radius: 14px;
+  padding: 10px 14px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.float-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.float-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.float-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.float-name {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.float-timer {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+.float-btn {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  background: #22c55e;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.float-btn:hover {
+  background: #16a34a;
+}

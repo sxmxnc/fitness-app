@@ -1,0 +1,223 @@
+/*
+  Autor: Justus Heinz
+
+*/
+
+/* PLAN LIST */
+
+.plan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plan-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.16), 0 3px 6px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.plan-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: #eff6ff;
+  color: #3b82f6;
+  border: 1px solid #bfdbfe;
+  text-align: center;
+}
+
+.btn-start-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.plan-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  gap: 12px;
+}
+
+.plan-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.plan-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.plan-desc {
+  font-size: 0.78rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.plan-exercises {
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+.plan-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-start {
+  padding: 8px 18px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-start:hover { background: #2563eb; }
+
+.plan-badge-modified {
+  background: #fefce8;
+  color: #ca8a04;
+  border-color: #fde047;
+}
+
+.btn-edit {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.btn-edit svg { width: 15px; height: 15px; }
+.btn-edit:hover { background: #dbeafe; }
+
+.btn-restore {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #16a34a;
+  flex-shrink: 0;
+}
+
+.btn-restore svg { width: 15px; height: 15px; }
+.btn-restore:hover { background: #dcfce7; }
+
+.deleted-classics-section {
+  margin-top: 24px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.deleted-classics-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.deleted-classic-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.deleted-classic-name {
+  font-size: 0.88rem;
+  color: #6b7280;
+}
+
+.btn-restore-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #16a34a;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-restore-text:hover { text-decoration: underline; }
+
+.btn-delete {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ef4444;
+  flex-shrink: 0;
+}
+
+.btn-delete svg { width: 15px; height: 15px; }
+.btn-delete:hover { background: #fee2e2; }
+
+/* DRAG AND DROP */
+
+.plan-card {
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+}
+
+.drag-handle {
+  color: #d1d5db;
+  display: flex;
+  align-items: center;
+  padding-right: 6px;
+  flex-shrink: 0;
+  cursor: grab;
+}
+
+.plan-card.is-dragging {
+  opacity: 0.55;
+  outline: 2px dashed #6366f1;
+  outline-offset: 2px;
+  background: #eef2ff;
+  box-shadow: 0 4px 16px rgb(99 102 241 / 0.18);
+  cursor: grabbing;
+}

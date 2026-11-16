@@ -1,0 +1,50 @@
+/**
+ * Autor: Luca Lammers
+
+ */
+
+.admin-logout-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #dc2626;
+  color: #fff;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.admin-logout-button:hover {
+  background: #b91c1c;
+  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.22);
+  transform: translateY(-1px);
+}
+
+.admin-logout-button:focus-visible {
+  outline: 3px solid rgba(220, 38, 38, 0.28);
+  outline-offset: 2px;
+}
+
+.admin-logout-button:active {
+  transform: translateY(0);
+}
+
+.admin-logout-button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+  transform: none;
+}
+
+.admin-logout-button i {
+  font-size: 0.95rem;
+}

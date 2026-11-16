@@ -1,0 +1,55 @@
+#
+# Autor: Luca Lammers
+
+#
+# Autor: Simon Josef Cebula
+
+#
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: myapp
+      POSTGRES_PASSWORD: wifhm
+      POSTGRES_DB: myapp
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./api-server/db/user_init.sql:/docker-entrypoint-initdb.d/01_init.sql
+      - ./api-server/db/user_demoData.sql:/docker-entrypoint-initdb.d/02_user_demoData.sql
+      - ./api-server/db/user_sessionData.sql:/docker-entrypoint-initdb.d/03_user_sessionData.sql
+      - ./api-server/db/workout_init.sql:/docker-entrypoint-initdb.d/05_workout_init.sql
+      - ./api-server/db/workout_demoData.sql:/docker-entrypoint-initdb.d/06_workout_demoData.sql
+      - ./api-server/db/food_init.sql:/docker-entrypoint-initdb.d/07_food_init.sql
+      - ./api-server/db/food_demoData.sql:/docker-entrypoint-initdb.d/08_food_demoData.sql
+      - ./api-server/db/food_seed30days.sql:/docker-entrypoint-initdb.d/09_food_seed30days.sql
+      - ./api-server/db/dashboard_seed365days.sql:/docker-entrypoint-initdb.d/10_dashboard_seed365days.sql
+      - ./api-server/db/admin_food_stats_seed30days.sql:/docker-entrypoint-initdb.d/11_admin_food_stats_seed30days.sql
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -h 127.0.0.1 -U myapp -d myapp" ]
+      interval: 7s
+      retries: 7
+
+  api-server:
+    build: ./api-server
+    env_file:
+      - ./api-server/.env
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - ./api-server/src:/app/src
+      - ./api-server/config.docker.json:/app/config.json
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  client:
+    build: ./client
+    environment:
+      VITE_API_PROXY_TARGET: http://api-server:3000
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./client/src:/app/src
+
+volumes:
+  postgres_data:

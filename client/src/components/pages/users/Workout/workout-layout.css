@@ -1,0 +1,49 @@
+/*
+  Autor: Justus Heinz
+
+*/
+
+.page-content {
+  min-height: 100vh;
+  background: #f3f4f6;
+  padding: 16px 16px 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.workout-container {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* LIST HEADER */
+
+.list-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-new-plan {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-new-plan svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-new-plan:hover { background: #2563eb; }

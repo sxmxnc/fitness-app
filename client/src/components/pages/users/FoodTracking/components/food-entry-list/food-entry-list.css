@@ -1,0 +1,159 @@
+/**
+ * Autor: Simon Josef Cebula
+
+ */
+
+:host {
+  display: block;
+}
+
+/* Entry list */
+.entries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.food-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.16), 0 3px 6px rgb(0 0 0 / 0.1);
+  padding: 20px;
+}
+
+.entry-card {
+  padding: 16px 20px;
+}
+
+.entry-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.entry-meal-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  background: #eff6ff;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+.entry-totals {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.entry-totals-divider {
+  color: #d1d5db;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.entry-total-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.entry-delete-btn {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 6px;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s;
+}
+
+.entry-delete-btn:hover {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.food-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0;
+  border-top: 1px solid #f3f4f6;
+}
+
+.food-item-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.food-item-macros {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+/* Meal type divider */
+.meal-type-divider {
+  border: none;
+  border-top: 1.5px solid #a5c8fd;
+  margin: 4px 0;
+}
+
+/* Empty state */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+  gap: 6px;
+}
+
+.empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 6px;
+}
+
+.empty-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.empty-subtitle {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+@media (max-width: 400px) {
+  .food-item {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .food-item-macros {
+    flex-shrink: 1;
+  }
+
+  .entry-totals {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
+
+@media (min-width: 640px) {
+  .food-card {
+    padding: 24px;
+  }
+
+  .entry-card {
+    padding: 20px 24px;
+  }
+}

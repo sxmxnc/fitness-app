@@ -1,0 +1,56 @@
+/**
+ * Autor: Simon Josef Cebula
+
+ */
+:host {
+  display: block;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.meal-type-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.meal-type-btn {
+  padding: 8px 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #6b7280;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-family: 'Space Grotesk', 'Sora', sans-serif;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.meal-type-btn.active {
+  border-color: #3b82f6;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.meal-type-btn:hover:not(.active) {
+  border-color: #bfdbfe;
+}
+
+@media (max-width: 400px) {
+  .meal-type-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

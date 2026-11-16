@@ -1,0 +1,29 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "workspaces": {
+    ".": {
+      "ignoreDependencies": ["chai", "express", "zod"]
+    },
+    "client": {
+      "entry": ["src/index.ts", "index.html"],
+      "project": ["src/**/*.ts"]
+    },
+    "api-server": {
+      "entry": [
+        "src/app.ts",
+        "scripts/run-tests.mjs",
+        "../tests/api-server/**/*.spec.ts"
+      ],
+      "project": ["src/**/*.ts", "../tests/api-server/**/*.ts"],
+      "ignoreDependencies": ["chai", "mocha", "c8", "@types/mocha", "@types/chai"]
+    },
+    "tests/e2e": {
+      "entry": ["src/Common/browser.ts", "src/**/*.e2e-spec.ts"],
+      "project": ["src/**/*.ts"]
+    },
+    "tests/component": {
+      "entry": ["**/*.spec.ts", "web-test-runner.config.js"],
+      "project": ["**/*.ts"]
+    }
+  }
+}

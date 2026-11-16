@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "scripts": {
+    "test": "web-test-runner --config web-test-runner.config.js --coverage --watch",
+    "test:ci": "web-test-runner --config web-test-runner.config.js --coverage"
+  },
+  "dependencies": {
+    "@lit-labs/router": "^0.1.4",
+    "@lit/context": "^1.1.6",
+    "chart.js": "^4.5.1"
+  },
+  "devDependencies": {
+    "@open-wc/testing-helpers": "^3.0.1",
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "@types/sinon": "^21.0.0",
+    "@web/test-runner": "^0.20.2",
+    "chai": "^6.2.2",
+    "mocha": "^12.0.0-beta-10",
+    "sinon": "^21.0.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  }
+}

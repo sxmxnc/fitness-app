@@ -1,0 +1,109 @@
+/**
+ * Autor: Luca Lammers
+
+ */
+
+:host {
+  --accent: #140095;
+  --text: #1a1a2e;
+  --text-light: #555577;
+  --white: #ffffff;
+  --shadow: 0 2px 16px rgba(0, 20, 160, 0.08);
+  --lightgrey-border: #e8eaf6;
+  font-family: 'Space Grotesk', 'Sora', system-ui, sans-serif;
+  color: var(--text);
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1% 40px;
+  height: 60px;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--lightgrey-border);
+}
+
+.navbar-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 32px;
+}
+
+.navbar-links a {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-light);
+  transition: color 0.15s;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar-links a:hover {
+  color: var(--accent);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    opacity 0.15s,
+    box-shadow 0.15s;
+  border: 2px solid transparent;
+}
+
+.btn:hover {
+  opacity: 0.88;
+  box-shadow: var(--shadow);
+}
+
+.start-btn {
+  background: var(--accent);
+  color: var(--white);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center !important;
+    align-items: center;
+  }
+  .navbar-links {
+    display: none;
+    padding-bottom: 7%;
+  }
+  .navbar-title {
+    font-size: 1rem;
+  }
+  .start-btn {
+    display: none;
+  }
+}

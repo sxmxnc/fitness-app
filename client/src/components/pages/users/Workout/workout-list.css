@@ -1,0 +1,452 @@
+/*
+  Autor: Justus Heinz
+
+*/
+
+.page-content {
+  min-height: 100vh;
+  background: #f3f4f6;
+  padding: 16px 16px 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.workout-container {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* LIST HEADER */
+
+.list-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-new-plan {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-new-plan svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-new-plan:hover { background: #2563eb; }
+
+/* LOADING / EMPTY STATE */
+
+.loading-state {
+  text-align: center;
+  padding: 48px 0;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 64px 0;
+  color: #9ca3af;
+  text-align: center;
+}
+
+.empty-state svg {
+  width: 56px;
+  height: 56px;
+  color: #d1d5db;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.btn-empty-cta {
+  padding: 10px 20px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-empty-cta:hover { background: #2563eb; }
+
+/* PLAN LIST */
+
+/* isolation: isolate brauch ich hier sonst überlappen sich die z-index Ebenen komisch */
+.climber-stage {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+}
+
+workout-climber {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+  display: block;
+}
+
+.plan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plan-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.16), 0 3px 6px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.plan-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: #eff6ff;
+  color: #3b82f6;
+  border: 1px solid #bfdbfe;
+}
+
+.plan-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  gap: 12px;
+}
+
+.plan-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.plan-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.plan-desc {
+  font-size: 0.78rem;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.plan-exercises {
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+.plan-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-start {
+  padding: 8px 18px;
+  background: #22c55e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-start:hover { background: #16a34a; }
+
+.btn-delete {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ef4444;
+  flex-shrink: 0;
+}
+
+.btn-delete svg { width: 15px; height: 15px; }
+.btn-delete:hover { background: #fee2e2; }
+
+/* MODAL */
+
+/* auf Handy von unten, auf Desktop zentriert – hat lang nicht funktionirt */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 100;
+  padding: 0;
+}
+
+@media (min-width: 540px) {
+  .modal-overlay {
+    align-items: center;
+    padding: 16px;
+  }
+}
+
+.modal {
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (min-width: 540px) {
+  .modal { border-radius: 16px; }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 12px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.modal-header h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.btn-icon-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #f3f4f6;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.btn-icon-close svg { width: 14px; height: 14px; }
+.btn-icon-close:hover { background: #e5e7eb; }
+
+.modal-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 10px;
+  padding: 16px 20px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.btn-cancel {
+  flex: 1;
+  padding: 12px;
+  background: #f3f4f6;
+  color: #374151;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-cancel:hover { background: #e5e7eb; }
+
+.btn-save-plan {
+  flex: 2;
+  padding: 12px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-save-plan:hover { background: #2563eb; }
+.btn-save-plan:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* FORM FIELDS */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.form-group input {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.87rem;
+  color: #111827;
+  outline: none;
+  background: #fff;
+}
+
+.form-group input:focus { border-color: #93c5fd; box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
+.form-group.has-error input { border-color: #f87171; }
+.form-group.flex-1 { flex: 1; min-width: 0; }
+
+.field-error {
+  font-size: 0.72rem;
+  color: #ef4444;
+}
+
+/* EXERCISES IN MODAL */
+
+.exercises-section { margin-top: 4px; }
+
+.exercises-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.btn-add-exercise {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #3b82f6;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.btn-add-exercise:hover { background: #dbeafe; }
+
+.exercise-block {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.exercise-name-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.btn-remove-exercise {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fee2e2;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #ef4444;
+}
+
+.btn-remove-exercise svg { width: 13px; height: 13px; }
+.btn-remove-exercise:hover { background: #fecaca; }
+
+.exercise-fields {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.exercise-fields .form-group.small {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.exercise-fields .form-group.small input { padding: 8px 10px; }
+
+/* TOAST */
+
+.toast {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  z-index: 200;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+.toast-ok { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+.toast-err { background: #fef2f2; color: #b91c1c; border: 1px solid #fca5a5; }

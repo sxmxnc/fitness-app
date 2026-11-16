@@ -1,0 +1,19 @@
+# Autor: Prof. Dr. Norman Lahme-Hütig (FH Münster) 
+
+# Packages
+node_modules/
+
+# Generierte Dateien
+coverage/
+dist/
+
+# Mac only
+.DS_Store
+
+# Environment variables
+.env
+
+# Playwright test artifacts
+e2e/test-results/
+e2e/playwright-report/
+/e2e/src/AI-Tests/Instructions.md

@@ -1,0 +1,226 @@
+/**
+ * Autor: Simon Josef Cebula
+
+ */
+
+/* Note: Parts of this file were developed with the assistance of AI tools. */
+
+:host {
+  display: block;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 20px;
+  width: calc(100% - 32px);
+  max-width: 600px;
+  max-height: 90dvh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  box-shadow: 0 1px 6px rgb(0 0 0 / 0.08), 0 10px 20px rgb(0 0 0 / 0.1);
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+.modal.dropdown-open {
+  overflow-y: hidden;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 0;
+}
+
+.modal-header h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.modal-close:hover {
+  background: #f3f4f6;
+}
+
+.modal-body {
+  padding: 16px 20px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.form-input {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  color: #111827;
+  background: #fff;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Space Grotesk', 'Sora', sans-serif;
+}
+
+.form-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 0.15);
+}
+
+.form-input.input-error {
+  border-color: #fca5a5;
+  background: #fef2f2;
+}
+
+.form-input.input-error:focus {
+  border-color: #b91c1c;
+  box-shadow: 0 0 0 3px rgb(185 28 28 / 0.15);
+}
+
+.form-input.input-error::placeholder {
+  color: #b91c1c;
+}
+
+/* Mode toggle */
+.mode-toggle {
+  display: flex;
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 3px;
+  margin-bottom: 16px;
+}
+
+.mode-btn {
+  flex: 1;
+  padding: 7px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  font-family: 'Space Grotesk', 'Sora', sans-serif;
+  transition: background 0.15s, color 0.15s;
+}
+
+.mode-btn.active {
+  background: #fff;
+  color: #111827;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.12);
+}
+
+.over-limit-hint {
+  font-size: 0.78rem;
+  color: #b91c1c;
+  margin-bottom: 10px;
+}
+
+/* Error */
+.form-error {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+/* Add button */
+.btn-add {
+  width: 100%;
+  padding: 10px;
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px dashed #d1d5db;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Space Grotesk', 'Sora', sans-serif;
+  transition: background 0.15s, border-color 0.15s;
+  margin-bottom: 12px;
+}
+
+.btn-add:hover:not(:disabled) {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.btn-add:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Save button */
+.btn-save {
+  width: 100%;
+  padding: 12px;
+  margin-top: 4px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Space Grotesk', 'Sora', sans-serif;
+}
+
+.btn-save:hover {
+  background: #2563eb;
+}
+
+.btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (min-width: 640px) {
+  .modal {
+    max-width: 560px;
+  }
+
+  .modal-body {
+    padding: 20px 28px 36px;
+  }
+}

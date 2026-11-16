@@ -1,0 +1,132 @@
+/**
+ * Autor: Simon Josef Cebula
+
+ */
+
+:host {
+	--color-bg: #f5f5f5;
+	--color-surface: #fff;
+	--color-border-soft: #ebebeb;
+	--color-overlay: rgba(0, 0, 0, 0.35);
+	--color-shadow-popup: rgba(0, 0, 0, 0.18);
+	--color-close-bg: #f5f5f5;
+	--color-close-hover: #ebebeb;
+	--color-text: #1a1a1a;
+	--color-text-subtle: #888;
+	--color-text-muted: #555;
+	--color-text-faint: #999;
+	--color-accent: #3b82f6;
+	--color-error: #ef4444;
+	font-family: 'Space Grotesk', 'Sora', system-ui, sans-serif;
+}
+
+.overlay {
+	position: fixed;
+	inset: 0;
+	background: var(--color-overlay);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 500;
+	padding: 1rem;
+}
+
+.popup {
+	background: var(--color-surface);
+	border-radius: 16px;
+	width: 100%;
+	max-width: 480px;
+	max-height: 85dvh;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 8px 32px var(--color-shadow-popup);
+	overflow: hidden;
+}
+
+.popup-header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 1.25rem 1.25rem 1rem;
+	border-bottom: 1px solid var(--color-border-soft);
+}
+
+.popup-name {
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: var(--color-text);
+}
+
+.popup-close {
+	background: var(--color-close-bg);
+	border: none;
+	border-radius: 8px;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: var(--color-text-muted);
+	flex-shrink: 0;
+}
+
+.popup-close svg {
+	width: 16px;
+	height: 16px;
+}
+
+.popup-close:hover {
+	background: var(--color-close-hover);
+}
+
+.popup-loading {
+	padding: 3rem;
+	text-align: center;
+	color: var(--color-text-faint);
+	font-size: 0.9rem;
+}
+
+.popup-error {
+	padding: 2rem;
+	text-align: center;
+	color: var(--color-error);
+	font-size: 0.875rem;
+}
+
+.popup-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.7rem;
+	padding: 1.25rem;
+	overflow-y: auto;
+}
+
+.stat-card {
+	background: var(--color-bg);
+	border-radius: 10px;
+	padding: 0.85rem 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+
+.stat-label {
+	font-size: 0.72rem;
+	font-weight: 600;
+	color: var(--color-text-subtle);
+	letter-spacing: 0.04em;
+}
+
+.stat-value {
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--color-text);
+}
+
+
+@media (min-width: 640px) {
+	.popup {
+		max-width: 520px;
+	}
+}

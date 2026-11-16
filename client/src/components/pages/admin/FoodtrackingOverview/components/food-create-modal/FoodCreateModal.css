@@ -1,0 +1,169 @@
+/**
+ * Autor: Simon Josef Cebula
+
+ */
+
+:host {
+	font-family: 'Space Grotesk', 'Sora', sans-serif;
+}
+
+.edit-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 200;
+	padding: 1rem;
+}
+
+.edit-modal {
+	background: #fff;
+	border-radius: 20px;
+	width: 100%;
+	max-width: 480px;
+	max-height: 90dvh;
+	overflow-y: auto;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+.edit-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 20px 0;
+}
+
+.edit-title {
+	font-size: 1rem;
+	font-weight: 700;
+	color: #111827;
+	margin: 0;
+}
+
+.edit-close {
+	background: none;
+	border: none;
+	font-size: 1rem;
+	color: #6b7280;
+	cursor: pointer;
+	padding: 4px 8px;
+	border-radius: 6px;
+}
+
+.edit-close:hover {
+	background: #f3f4f6;
+}
+
+.edit-body {
+	padding: 16px 20px 28px;
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+
+.edit-error {
+	background: #fef2f2;
+	border: 1px solid #fca5a5;
+	color: #b91c1c;
+	border-radius: 8px;
+	padding: 8px 12px;
+	font-size: 0.8rem;
+	margin-bottom: 12px;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	margin-bottom: 16px;
+}
+
+.form-label {
+	font-size: 0.75rem;
+	font-weight: 600;
+	color: #6b7280;
+}
+
+.form-input {
+	width: 100%;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	padding: 10px 12px;
+	font-size: 0.9rem;
+	color: #111827;
+	background: #fff;
+	outline: none;
+	box-sizing: border-box;
+	font-family: 'Space Grotesk', 'Sora', sans-serif;
+}
+
+.form-input:focus {
+	border-color: #3b82f6;
+	box-shadow: 0 0 0 3px rgb(59 130 246 / 0.15);
+}
+
+.form-input.input-error {
+	border-color: #fca5a5;
+	background: #fef2f2;
+}
+
+.form-input.input-error:focus {
+	border-color: #b91c1c;
+	box-shadow: 0 0 0 3px rgb(185 28 28 / 0.15);
+}
+
+.form-input.input-error::placeholder {
+	color: #b91c1c;
+}
+
+.form-row {
+	display: flex;
+	gap: 10px;
+}
+
+.form-row .form-group {
+	flex: 1;
+	min-width: 0;
+}
+
+.over-limit-hint {
+	font-size: 0.78rem;
+	color: #b91c1c;
+	margin-bottom: 10px;
+}
+
+.btn-save {
+	width: 100%;
+	padding: 12px;
+	margin-top: 4px;
+	background: #3b82f6;
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	font-size: 0.95rem;
+	font-weight: 600;
+	cursor: pointer;
+	font-family: 'Space Grotesk', 'Sora', sans-serif;
+	transition: opacity 0.15s;
+}
+
+.btn-save:hover {
+	opacity: 0.85;
+}
+
+.btn-save:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+@media (min-width: 640px) {
+	.edit-modal {
+		max-width: 520px;
+	}
+
+	.edit-body {
+		padding: 20px 28px 32px;
+	}
+}

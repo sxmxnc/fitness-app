@@ -1,0 +1,214 @@
+/*
+  Autor: Justus Heinz
+
+*/
+
+.page-content {
+  min-height: 100vh;
+  background: #f3f4f6;
+  padding: 16px 16px 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.session-container {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* TOP BAR */
+
+.session-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.btn-back {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  color: #374151;
+  font-size: 0.87rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-back svg { width: 15px; height: 15px; }
+.btn-back:hover { background: #f9fafb; }
+
+.session-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.session-plan-name {
+  font-size: 0.78rem;
+  color: #6b7280;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+.timer {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+/* LOADING */
+
+.loading-state {
+  text-align: center;
+  padding: 48px 0;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* EXERCISES LIST */
+
+.exercises-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exercise-section {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  padding: 16px;
+}
+
+.exercise-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.exercise-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.exercise-sets-count {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+/* SETS TABLE */
+
+/* grid mit 4 Spalten, Abstnad zwischen den Inputs per gap gelöst */
+.sets-table { display: flex; flex-direction: column; gap: 6px; }
+
+.sets-header {
+  display: grid;
+  grid-template-columns: 32px 1fr 1fr 32px;
+  gap: 8px;
+  padding: 0 2px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.set-row {
+  display: grid;
+  grid-template-columns: 32px 1fr 1fr 32px;
+  gap: 8px;
+  align-items: center;
+}
+
+.set-num {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-align: center;
+}
+
+.set-input {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.88rem;
+  color: #111827;
+  outline: none;
+  text-align: center;
+  width: 100%;
+  min-width: 0;
+  background: #fff;
+}
+
+.set-input:focus { border-color: #93c5fd; box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
+
+.btn-remove-set {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.btn-remove-set svg { width: 14px; height: 14px; }
+.btn-remove-set:not(:disabled):hover { background: #fee2e2; color: #ef4444; }
+.btn-remove-set:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.btn-add-set {
+  margin-top: 8px;
+  width: 100%;
+  padding: 9px;
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+  border-radius: 8px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.btn-add-set:hover { background: #f3f4f6; border-color: #9ca3af; color: #374151; }
+
+/* FINISH BUTTON */
+
+.btn-finish {
+  width: 100%;
+  padding: 14px;
+  background: #22c55e;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.btn-finish:hover { background: #16a34a; }
+.btn-finish:disabled { opacity: 0.6; cursor: not-allowed; }
